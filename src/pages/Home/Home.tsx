@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Hero } from "../../components/Hero";
 import { FeatureList } from "../../components/FeatureList";
 import { Fireworks } from "@fireworks-js/react";
