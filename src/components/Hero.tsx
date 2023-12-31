@@ -1,11 +1,10 @@
-import React from "react";
 import {
   HeroDescription,
   HeroHeading,
   HeroImage,
   HeroTextWrapper,
   StyledHero,
-} from "./styles/Hero.Styled";
+} from "./styles/Hero.styled";
 import { MotionConfig } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";

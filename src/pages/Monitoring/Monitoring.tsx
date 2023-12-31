@@ -16,7 +16,6 @@ export const Monitoring = () => {
       <Status />
       <Pipeline pipelineSections={pipelineSections} />
       {showSidebar && <Sidebar title="Simulation" />}
-      {}
       {error ? (
         <Statistics />
       ) : (

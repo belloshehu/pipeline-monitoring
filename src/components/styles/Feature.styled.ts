@@ -1,6 +1,6 @@
 import styled, { WebTarget } from "styled-components";
 import { motion } from "framer-motion";
-import { HeroImage } from "./Hero.Styled";
+import { HeroImage } from "./Hero.styled";
 
 export const StyledFeature = styled(motion.div as WebTarget)`
   width: 100%;
