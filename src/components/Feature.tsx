@@ -1,15 +1,21 @@
 import {
   StyledFeature,
+  StyledFeatureHeading,
   StyledFeatureImage,
   StyledFeatureTextWrapper,
 } from "./styles/Feature.styled";
 import { FeatureType } from "../types";
 
-export const Feature = ({ heading, description, imageUrl }: FeatureType) => {
+export const Feature = ({
+  heading,
+  description,
+  imageUrl,
+  direction,
+}: FeatureType) => {
   return (
-    <StyledFeature>
+    <StyledFeature direction={direction}>
       <StyledFeatureTextWrapper>
-        <h1>{heading}</h1>
+        <StyledFeatureHeading>{heading}</StyledFeatureHeading>
         <p>{description}</p>
       </StyledFeatureTextWrapper>
       <StyledFeatureImage src={imageUrl} />
