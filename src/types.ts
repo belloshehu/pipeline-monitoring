@@ -21,3 +21,9 @@ export type AppContextType = {
   showSidebar: boolean;
   setShowSidebar: (value: boolean) => void;
 };
+
+export type FeatureType = {
+  heading: string;
+  description: string;
+  imageUrl: string;
+};

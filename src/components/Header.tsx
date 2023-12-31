@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Link to={"/"}>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
           <h1>Pipeline monitoring</h1>
         </Link>
         <button

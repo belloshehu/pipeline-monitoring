@@ -7,6 +7,8 @@ import {
   StyledHero,
 } from "./styles/Hero.Styled";
 import { MotionConfig } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "./Button";
 
 export const Hero: React.FC = () => {
   return (
@@ -22,6 +24,9 @@ export const Hero: React.FC = () => {
             Monitoring and detection of pipeline vandalization made easy and
             effective
           </HeroDescription>
+          <Link to={"/monitoring"}>
+            <Button text="Get Started" bgColor="" color="" />
+          </Link>
         </HeroTextWrapper>
         <HeroImage
           src="/pipeline.jpg"
