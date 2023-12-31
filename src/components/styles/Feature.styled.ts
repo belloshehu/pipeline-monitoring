@@ -4,7 +4,7 @@ import { HeroImage } from "./Hero.Styled";
 
 export const StyledFeature = styled(motion.div as WebTarget)`
   width: 100%;
-  box-shadow: 0px 0px 10px rgba(110, 110, 110, 0.7);
+  box-shadow: 0px 0px 2px rgba(110, 110, 110, 0.7);
   min-height: 30vh;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const StyledFeature = styled(motion.div as WebTarget)`
   color: white;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: ${({ direction }) => direction || "row"};
     gap: 2rem;
   }
 `;
@@ -42,5 +42,12 @@ export const StyledFeatureTextWrapper = styled(motion.div as WebTarget)`
 export const StyledFeatureImage = styled(HeroImage)`
   @media screen and (min-width: 768px) {
     height: 500px;
+  }
+`;
+
+export const StyledFeatureHeading = styled(motion.div as WebTarget)`
+  font-size: 1rem;
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
   }
 `;

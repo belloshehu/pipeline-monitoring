@@ -26,4 +26,5 @@ export type FeatureType = {
   heading: string;
   description: string;
   imageUrl: string;
+  direction: string;
 };

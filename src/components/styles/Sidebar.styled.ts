@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-export const StyledSidebar = styled(motion.div)`
+export const StyledSidebar = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
