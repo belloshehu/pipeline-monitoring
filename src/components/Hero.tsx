@@ -1,9 +1,9 @@
 import {
+  StyledHero,
   HeroDescription,
+  HeroTextWrapper,
   HeroHeading,
   HeroImage,
-  HeroTextWrapper,
-  StyledHero,
 } from "./styles/Hero.styled";
 import { MotionConfig } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -15,9 +15,10 @@ export const Hero: React.FC = () => {
       <MotionConfig transition={{ duration: 0.5, ease: "linear" }}>
         <HeroTextWrapper
           initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
+          whileInView={{ scale: 1, rotate: 0 }}
           exit={{ scale: 0, rotate: 0 }}
-          whileHover={{ scale: 0.8 }}>
+          // whileHover={{ scale: 0.8 }}
+        >
           <HeroHeading>Pipeline monitoring</HeroHeading>
           <HeroDescription>
             Monitoring and detection of pipeline vandalization made easy and
@@ -30,7 +31,7 @@ export const Hero: React.FC = () => {
         <HeroImage
           src="/pipeline.jpg"
           initial={{ scale: 0, rotate: 180 }}
-          animate={{ scale: 1, rotate: 0 }}
+          whileInView={{ scale: 1, rotate: 0 }}
           exit={{ scale: 0, rotate: 0 }}
           whileHover={{ scale: 0.8 }}
         />

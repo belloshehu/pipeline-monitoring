@@ -3,6 +3,7 @@ import { Hero } from "../../components/Hero";
 import { FeatureList } from "../../components/FeatureList";
 import { Fireworks } from "@fireworks-js/react";
 import type { FireworksHandlers } from "@fireworks-js/react";
+import { StyledHome } from "../../components/styles/Home.styled";
 
 export const Home = () => {
   const ref = useRef<FireworksHandlers>(null);
@@ -21,18 +22,16 @@ export const Home = () => {
   }, []);
 
   return (
-    <>
+    <StyledHome>
       <Fireworks
         ref={ref}
         options={{
-          opacity: 0.5,
-
+          opacity: 1,
           acceleration: 1.2,
           friction: 0.96,
           gravity: 1,
-          particles: 90,
-
-          explosion: 6,
+          particles: 100,
+          explosion: 10,
           autoresize: true,
         }}
         style={{
@@ -41,6 +40,7 @@ export const Home = () => {
           width: "100%",
           height: "100%",
           position: "fixed",
+          zIndex: -1,
           background: "#000",
           opacity: 0.1,
           scrollBehavior: "smooth",
@@ -48,6 +48,6 @@ export const Home = () => {
       />
       <Hero />
       <FeatureList />
-    </>
+    </StyledHome>
   );
 };
