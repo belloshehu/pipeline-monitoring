@@ -1,6 +1,22 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledSidebar = styled.div`
+export const StyledSidebar = styled(motion.aside).attrs(() => ({
+  animate: {
+    scale: [0.2, 0.5, 0.8, 1],
+    rotate: [0, 180, 270, 360],
+    translate: ["-100%", "-15%", "-10%", "0%"],
+    opacity: 1,
+  },
+  transition: {
+    duration: 1,
+    ease: "easeInOut",
+    times: [0.1, 0.2, 0.4, 1],
+  },
+  exit: {
+    opacity: 0.4,
+  },
+}))`
   width: 100%;
   position: fixed;
   top: 0;
@@ -25,7 +41,14 @@ export const SidebarHeader = styled.div`
   text-align: center;
   padding: 1rem;
 `;
-export const SidebarBody = styled.div`
+export const SidebarBody = styled(motion.div).attrs(() => ({
+  initial: { scale: 0.2 },
+  animate: { scale: 1 },
+  transition: {
+    ease: "easeInOut",
+    staggerChildren: 0.25,
+  },
+}))`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -33,7 +56,21 @@ export const SidebarBody = styled.div`
   padding: 1rem;
 `;
 
-export const SidebarBodyItem = styled.div`
+export const SidebarBodyItem = styled(motion.div).attrs(() => ({
+  initial: {
+    translateX: "-50%",
+    x: -100,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    translateX: "0%",
+    x: 0,
+  },
+  transition: {
+    ease: "easeOut",
+  },
+}))`
   display: flex;
   justify-content: space-between;
   align-items: center;

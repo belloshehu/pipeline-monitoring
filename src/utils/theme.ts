@@ -7,9 +7,16 @@ export const appTheme = {
   backgroundColor: {
     header: "rgba(100, 100, 100, 0.6)",
     body: "black",
-    pipelineSection: "rgba(0, 200, 0, 0.9)",
+    pipelineSection: {
+      normal: "rgba(0, 200, 0, 0.9)",
+      leakage: "rgba(200, 0, 0, 0.9)",
+    },
   },
   screen: {
     mobile: "768px",
+  },
+  connectionColor: {
+    connected: "green",
+    disconnected: "red",
   },
 };

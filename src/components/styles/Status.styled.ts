@@ -13,6 +13,7 @@ export const StyledStatus = styled.div`
   margin-bottom: 5rem;
   font-size: 1rem;
   width: 100%;
+  position: relative;
   h3 {
     text-shadow: 10px 5px 30px white;
   }
