@@ -4,14 +4,20 @@ import { StyledPipeline } from "./styles/Pipeline.styled";
 
 export const Pipeline = ({
   pipelineSections,
+  data,
 }: {
   pipelineSections: PipelineSectionType[];
+  data: string[];
 }) => {
   console.log(pipelineSections);
   return (
     <StyledPipeline>
-      {pipelineSections.map((section: PipelineSectionType) => (
-        <PipelineSection detail={section} key={section.id} />
+      {pipelineSections.map((section: PipelineSectionType, index: number) => (
+        <PipelineSection
+          detail={section}
+          key={section.id}
+          data={data[index] as "0" | "1"}
+        />
       ))}
     </StyledPipeline>
   );

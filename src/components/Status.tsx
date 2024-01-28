@@ -1,9 +1,11 @@
 import { StyledStatus } from "./styles/Status.styled";
 import { pipelineSections } from "../utils/mock-data";
+import { Indicator } from "./Indicator";
 
-export const Status = () => {
+export const Status = ({ connected }: { connected: boolean }) => {
   return (
     <StyledStatus>
+      <Indicator connected={connected} />
       <h3>Status | Ok</h3>
       <h3>Pipeline Sections | {pipelineSections.length}</h3>
       <h3>

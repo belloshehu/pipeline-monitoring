@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-export const StyledPipelineSection = styled.div`
-  background-color: ${({ theme }) => theme.backgroundColor.pipelineSection};
+export const StyledPipelineSection = styled.div<{ $isLeaking: boolean }>`
+  background-color: ${({ theme, $isLeaking }) =>
+    $isLeaking
+      ? theme.backgroundColor.pipelineSection.leakage
+      : theme.backgroundColor.pipelineSection.normal};
   padding: 3rem;
   width: 100%;
   color: ${({ theme }) => theme.color.pipelineSection};

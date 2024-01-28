@@ -5,7 +5,7 @@ import {
   HeroHeading,
   HeroImage,
 } from "./styles/Hero.styled";
-import { MotionConfig } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 
@@ -28,6 +28,7 @@ export const Hero: React.FC = () => {
             <Button text="Get Started" bgColor="" color="" />
           </Link>
         </HeroTextWrapper>
+
         <HeroImage
           src="/pipeline.jpg"
           initial={{ scale: 0, rotate: 180 }}
