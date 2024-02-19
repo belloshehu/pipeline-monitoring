@@ -1,6 +1,16 @@
 import styled, { WebTarget } from "styled-components";
 import { motion } from "framer-motion";
-import { HeroImage } from "./Hero.styled";
+
+const HeroImage = styled(motion.img as WebTarget)`
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    height: 400px;
+  }
+`;
 
 export const StyledFeature = styled(motion.div as WebTarget)`
   width: 100%;
