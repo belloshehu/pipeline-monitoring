@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Status } from "../../components/Status";
 import { Pipeline } from "../../components/Pipeline";
 import { useAppContext } from "../../contexts/app-context";
@@ -7,14 +7,31 @@ import { pipelineSections } from "../../utils/mock-data";
 import { Sidebar } from "../../components/Sidebar";
 import { Statistics } from "../../components/Statistics";
 import { Container } from "../../components/styles/Container.styled";
-import mqtt, { MqttClient } from "mqtt";
+import mqtt, { IClientOptions, MqttClient } from "mqtt";
 
-const host2 = "wss://broker.emqx.io:8084/mqtt";
+const host = "wss://broker.emqx.io:8084/mqtt";
 export const Monitoring = () => {
   const [connected, setConnected] = useState(false);
   const [message, setMessage] = useState("");
 
-  const client: MqttClient = mqtt.connect(host2);
+  const clientId = `mqttjs_1+ ${Math.random().toString(16).substr(2, 8)}`;
+  const options: IClientOptions = {
+    keepalive: 60,
+    clientId: clientId,
+    protocolId: "MQTT",
+    protocolVersion: 4,
+    clean: true,
+    reconnectPeriod: 1000,
+    connectTimeout: 30 * 1000,
+    // will: {
+    //   topic: "WillMsg",
+    //   payload:"Connection Closed abnormally..!",
+    //   qos: 0,
+    //   retain: false,
+    // },
+  };
+
+  const client: MqttClient = mqtt.connect(host, options);
 
   client.on("connect", () => {
     setConnected(true);
@@ -37,7 +54,18 @@ export const Monitoring = () => {
   return (
     <div>
       <Status connected={connected} />
-      <Pipeline pipelineSections={pipelineSections} data={message.split(",")} />
+      <Container>
+        <img
+          src="design-side.jpg"
+          height={400}
+          width={400}
+          className="m-width-screen rounded-md"
+        />
+        <Pipeline
+          pipelineSections={pipelineSections}
+          data={message.split(",")}
+        />
+      </Container>
       {showSidebar && <Sidebar title="Simulation" />}
       {error ? (
         <Statistics />
