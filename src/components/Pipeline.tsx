@@ -9,7 +9,6 @@ export const Pipeline = ({
   pipelineSections: PipelineSectionType[];
   data: string[];
 }) => {
-  console.log(pipelineSections);
   return (
     <StyledPipeline>
       {pipelineSections.map((section: PipelineSectionType, index: number) => (
