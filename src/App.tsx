@@ -10,8 +10,8 @@ function App() {
       <GlobalStyles />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/monitoring" element={<Monitoring />} />
+        <Route path="/monitoring" element={<Home />} />
+        <Route path="/" element={<Monitoring />} />
       </Routes>
     </>
   );

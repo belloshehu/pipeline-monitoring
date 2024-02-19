@@ -5,7 +5,7 @@ import {
   HeroHeading,
   HeroImage,
 } from "./styles/Hero.styled";
-import { AnimatePresence, MotionConfig } from "framer-motion";
+import { MotionConfig } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
 
