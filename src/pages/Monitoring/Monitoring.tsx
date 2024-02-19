@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Status } from "../../components/Status";
 import { Pipeline } from "../../components/Pipeline";
 import { useAppContext } from "../../contexts/app-context";
@@ -14,31 +14,6 @@ export const Monitoring = () => {
   const [connected, setConnected] = useState(false);
   const [message, setMessage] = useState("");
   const imageRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const ele = document?.getElementsByClassName("iactiveImgPoint");
-
-  //   for (let i = 0; i < ele.length; i++) {
-  //     const slide = ele[i];
-
-  //     if (i > 0) {
-  //       if (slide instanceof HTMLElement) {
-  //         slide.style.backgroundColor = "green";
-  //         slide.style.borderColor = "green";
-  //         slide.setAttribute("class", "iactiveImgPoint");
-  //         const f = slide.firstElementChild as HTMLElement;
-  //         f.style.cssText = "background:green !important";
-  //       }
-  //     } else {
-  //       if (slide instanceof HTMLElement) {
-  //         slide.style.backgroundColor = "red";
-  //         slide.setAttribute("class", "iactiveImgPoint pulsetrigger");
-  //         const f = slide.firstElementChild as HTMLElement;
-  //         f.style.cssText = "background:red !important";
-  //       }
-  //     }
-  //   }
-  // }, []);
 
   const updateSectionImageColor = () => {
     const ele = document?.getElementsByClassName("iactiveImgPoint");
