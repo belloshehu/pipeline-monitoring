@@ -31,6 +31,7 @@ export const StyledPipeline = styled.ul`
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    width: 50%;
     @keyframes scroll {
       from {
         transform: scale(0.8);
