@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Status } from "../../components/Status";
 import { Pipeline } from "../../components/Pipeline";
 import { useAppContext } from "../../contexts/app-context";
@@ -14,7 +14,6 @@ const host = "wss://broker.emqx.io:8084/mqtt";
 export const Monitoring = () => {
   const [connected, setConnected] = useState(false);
   const [message, setMessage] = useState("");
-  const imageRef = useRef<HTMLDivElement>(null);
 
   const clientId = `mqttjs_1+ ${Math.random().toString(16).substr(2, 8)}`;
   const options: IClientOptions = {
@@ -60,7 +59,8 @@ export const Monitoring = () => {
       <Status connected={connected} />
       <Container>
         <PlantImageWrapper message={message}>
-          <div className="iactiveImg" data-ii="57302" ref={imageRef}></div>
+          <div className="iactiveImg" data-ii="57367"></div>
+          {/* <div className="iactiveImg" data-ii="57302"></div> */}
         </PlantImageWrapper>
         <Pipeline
           pipelineSections={pipelineSections}
