@@ -59,8 +59,8 @@ export const Monitoring = () => {
       <Status connected={connected} />
       <Container>
         <PlantImageWrapper message={message}>
-          <div className="iactiveImg" data-ii="57367"></div>
-          {/* <div className="iactiveImg" data-ii="57302"></div> */}
+          {/* <div className="iactiveImg" data-ii="57367"></div> */}
+          <div className="iactiveImg" data-ii="57498"></div>
         </PlantImageWrapper>
         <Pipeline
           pipelineSections={pipelineSections}
@@ -72,10 +72,17 @@ export const Monitoring = () => {
         <Statistics />
       ) : (
         <Container>
-          <h3 style={{ color: "white" }}>
-            {message.split(",").includes("1")
-              ? "There is leakage"
-              : "Everything is ok"}
+          <h3
+            style={{
+              color: "white",
+              marginTop: "2rem",
+              backgroundColor: `${connected ? "" : "red"}`,
+            }}>
+            {connected
+              ? message.split(",").includes("1")
+                ? "There is leakage"
+                : "No leakage"
+              : "Unknown status"}
           </h3>
         </Container>
       )}
