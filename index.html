@@ -13,6 +13,40 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- <script src="https://interactive-img.com/js/include.js"></script> -->
-    <script src="https://interactive-img.com/js/include.js"></script>
+    <script>
+      // Function to dynamically load the include.js script
+      function loadIncludeJs() {
+        var script = document.createElement("script");
+        script.src = "https://interactive-img.com/js/include.js";
+        document.body.appendChild(script);
+      }
+
+      // Select all script elements on the page
+      var allScripts = document.querySelectorAll("script");
+
+      // Create an array to hold promises for each script's load event
+      var loadPromises = Array.from(allScripts).map((script) => {
+        // For scripts that are already loaded or do not have a src (inline scripts), immediately resolve
+        if (!script.src || script.readyState === "complete") {
+          return Promise.resolve();
+        }
+
+        // For external scripts, return a promise that resolves on load
+        return new Promise((resolve) => {
+          script.addEventListener("load", resolve);
+          script.addEventListener("error", resolve); // Resolve even if there's an error to not block the chain
+        });
+      });
+
+      // Use Promise.all to wait for all scripts to load (or fail to load)
+      Promise.all(loadPromises)
+        .then(() => {
+          // All scripts have finished loading, now load include.js
+          loadIncludeJs();
+        })
+        .catch((error) => {
+          console.error("An error occurred while loading scripts:", error);
+        });
+    </script>
   </body>
 </html>
