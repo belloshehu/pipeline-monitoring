@@ -7,8 +7,7 @@ const StyledPlantImageWrapper = styled.div`
   height: fit-content;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
-    height: 360px;
+    width: 45%;
     height: fit-content;
   }
 `;

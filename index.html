@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pipelinemon</title>
+    <script
+      type="module"
+      crossorigin
+      src="https://pipeline-monitoring-system.onrender.com/assets/index-wM2-VF-O.js"
+      id="mainScript"></script>
   </head>
   <body
     style="
@@ -11,8 +16,22 @@
         'Lucida Sans', Arial, sans-serif;
     ">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- <script src="https://interactive-img.com/js/include.js"></script> -->
-    <script src="https://interactive-img.com/js/include.js"></script>
+    <script>
+      // Select the main script element
+      var mainScript = document.getElementById("mainScript");
+
+      // Function to load the include.js script
+      function loadIncludeJs() {
+        var script = document.createElement("script");
+        script.src = "https://interactive-img.com/js/include.js";
+        document.body.appendChild(script);
+      }
+
+      // Listen for the load event on the main script
+      // Once it loads, load the include.js script
+      mainScript.addEventListener("load", function () {
+        loadIncludeJs();
+      });
+    </script>
   </body>
 </html>
